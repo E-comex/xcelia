@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Xcelia - Center for Excellence</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- responsive css -->
+    <!-- <link href="css/responsive.css" rel="stylesheet"> -->
+</head>
+
+<style>
+    .nav-item.nav-link {
+        position: relative;
+        display: inline-block;
+        padding: 30px 0;
+    }
+
+    .nav-item.nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        top: calc(50% + 10px);
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: var(--primary);
+        transition: all 0.3s ease;
+    }
+
+    .nav-item.nav-link:hover::after {
+        width: 65%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .hover-scale {
+        transition: transform 0.3s ease;
+    }
+
+    .hover-scale:hover {
+        transform: scale(1.1);
+        /* Changed from translateY(-10px) to scale(1.1) for zoom effect */
+    }
+
+    /* Add specific styles for the navbar logo */
+    .navbar-brand .hover-scale {
+        transition: transform 0.3s ease;
+    }
+
+    .navbar-brand .hover-scale:hover {
+        transform: scale(1.1);
+        /* Zoom effect for logo */
+    }
+
+    /* course card styles */
+    .course-card.hover-scale {
+        transition: transform 0.3s ease;
+        position: relative;
+    }
+
+    .course-card.hover-scale:hover {
+        transform: translateY(-10px);
+    }
+
+    .card {
+        overflow: hidden;
+        border-radius: 20px;
+        position: relative;
+    }
+
+    .card-img-top {
+        height: 400px;
+        object-fit: cover;
+        transition: all 0.5s ease;
+    }
+
+    .overlay-content {
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2));
+        transition: all 0.4s ease;
+        padding: 2rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+    }
+
+    .card:hover .overlay-content {
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4));
+    }
+
+    .card:hover .card-img-top {
+        transform: scale(1.1);
+    }
+
+    /* Text styles */
+    .overlay-content h3 {
+        font-size: 2rem;
+        font-weight: 700;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        margin-bottom: 1rem;
+        transition: all 0.4s ease;
+    }
+
+    .overlay-content p {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        transition: all 0.4s ease;
+    }
+
+    /* Custom button styles */
+    .detail-btn {
+        border-radius: 50px;
+        padding: 12px 30px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        background: linear-gradient(45deg, var(--primary), #25627D);
+        border: none;
+        position: relative;
+        overflow: hidden;
+        color: #fff;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .detail-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .detail-btn:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: all 0.5s ease;
+    }
+
+    .detail-btn:hover:before {
+        left: 100%;
+    }
+
+
+    .testimonial-carousel .testimonial-item {
+        padding: 0 10px;
+
+    }
+
+    .testimonial-carousel .testimonial-item .bg-light {
+        border-radius: 5px;
+        transition: .3s;
+    }
+
+    .testimonial-carousel .owl-nav {
+        position: absolute;
+        width: 100%;
+        height: 45px;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .testimonial-carousel .owl-nav .owl-prev,
+    .testimonial-carousel .owl-nav .owl-next {
+        position: relative;
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #FFFFFF;
+        background: #25627D;
+        font-size: 22px;
+        transition: .5s;
+    }
+
+    .testimonial-carousel .owl-nav .owl-prev:hover,
+    .testimonial-carousel .owl-nav .owl-next:hover {
+        background: #1e5066;
+    }
+
+
+
+    /* Toast css  */
+    #toast {
+        visibility: hidden;
+        min-width: 250px;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        border-radius: 8px;
+        padding: 16px;
+        position: fixed;
+        z-index: 1000;
+        right: 30px;
+        bottom: 30px;
+        font-size: 16px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    #toast.show {
+        visibility: visible;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    }
+
+    @keyframes fadein {
+        from {
+            bottom: 0;
+            opacity: 0;
+        }
+
+        to {
+            bottom: 30px;
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeout {
+        from {
+            bottom: 30px;
+            opacity: 1;
+        }
+
+        to {
+            bottom: 0;
+            opacity: 0;
+        }
+    }
+
+    /* Typing animation styles */
+    .typing-animation::after {
+        content: '|';
+        animation: blink 1s step-end infinite;
+    }
+
+    @keyframes blink {
+
+        0%,
+        100% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0;
+        }
+    }
+</style>
+
+
+<body>
+    <!-- Topbar Start -->
+    <div id="top" class="container-fluid bg-dark">
+        <div class="row py-2 px-lg-5">
+            <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center text-white">
+                    <small><i class="fa fa-phone-alt mr-2"></i>+91 9995 400 699</small>
+                    <small class="px-3">|</small>
+                    <small><i class="fa fa-envelope mr-2"></i>xceliaedu@gmail.com</small>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center text-lg-right">
+                <div class="d-inline-flex align-items-center">
+                    <a class="text-white px-2" href="https://www.facebook.com/share/1Cos4F1RYs/?mibextid=LQQJ4d"
+                        target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <!-- <a class="text-white px-2" href="">
+                        <i class="fab fa-twitter"></i>
+                    </a> -->
+                    <!-- <a class="text-white px-2" href="">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a> -->
+                    <a class="text-white px-2" href="https://www.instagram.com/xceliaedu" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <!-- <a class="text-white pl-2" href="">
+                        <i class="fab fa-youtube"></i>
+                    </a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0" style="position: fixed; top: 0; z-index: 50;">
+        <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5 shadow">
+            <a href="" class="navbar-brand ml-lg-3">
+                <h1 class="m-0 text-uppercase text-primary">
+                    <img src="./img/xcelia-logo.png" alt="Xcelia Logo" width="120" height="52" class="hover-scale">
+                </h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
+                <div class="navbar-nav ml-auto py-0">
+                    <a href="#" class="nav-item nav-link">Home</a>
+                    <a href="#about" class="nav-item nav-link">About</a>
+                    <a href="#course" class="nav-item nav-link">Courses</a>
+                    <a href="#contact" class="nav-item nav-link">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Header Start -->
+    <div class="jumbotron jumbotron-fluid position-relative overlay-bottom" style="margin-bottom: 90px;">
+        <div class="container text-center my-5 py-5">
+            <h1 class="text-white display-1 mb-4">Xcelia</h1>
+            <h1 class="text-white mt-2 mb-2" id="typing-text"></h1>
+        </div>
+    </div>
+    <!-- Header End -->
+
+
+    <!-- About Start -->
+    <div id="about" class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100" src="img/about.jpg" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="section-title position-relative mb-4">
+                        <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">About Us</h6>
+                        <h1 class="display-4">Be competent in the competitive world</h1>
+                    </div>
+                    <p>Xcelia Centre for Excellence is an inspired group of patrons, comprised of dedicated academicians
+                        and seasoned professionals, united by a shared commitment to delivering high-quality,
+                        competitive education. Our mission is to empower students and professionals with the skills,
+                        knowledge, and insights needed to excel in their respective fields and adapt to a constantly
+                        changing world. </p>
+
+                    <p>With a team of experts from diverse backgrounds, we offer a comprehensive range of educational
+                        programs that blend academic rigor with practical relevance. Each of our programs is
+                        thoughtfully designed to not only impart knowledge but also to foster critical
+                        thinking, and innovation.</p>
+                    <div class="row pt-3 mx-0">
+                        <div class="col-4 px-0">
+                            <div class="bg-success text-center p-4">
+                                <h1 class="text-white" data-toggle="counter-up">15</h1>
+                                <h6 class="text-uppercase text-white">Available<span class="d-block">Subjects</span>
+                                </h6>
+                            </div>
+                        </div>
+                        <!-- <div class="col-3 px-0">
+                            <div class="bg-primary text-center p-4">
+                                <h1 class="text-white" data-toggle="counter-up">1234</h1>
+                                <h6 class="text-uppercase text-white">Online<span class="d-block">Courses</span></h6>
+                            </div>
+                        </div> -->
+                        <div class="col-4 px-0">
+                            <div class="bg-secondary text-center p-4">
+                                <h1 class="text-white" data-toggle="counter-up">10</h1>
+                                <h6 class="text-uppercase text-white">Skilled<span class="d-block">Instructors</span>
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="col-4 px-0">
+                            <div class="bg-warning text-center p-4">
+                                <h1 class="text-white" data-toggle="counter-up">200</h1>
+                                <h6 class="text-uppercase text-white">Happy<span class="d-block">Students</span></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Feature Start -->
+    <div class="container-fluid bg-image py-5">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-7 mb-5 mb-lg-0">
+                    <div class="section-title position-relative mb-4">
+                        <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Why Choose Us?
+                        </h6>
+                        <h1 class="display-4">Why You Should Start Learning with Us?</h1>
+                    </div>
+                    <!-- <p class="mb-4 pb-2">Aliquyam accusam clita nonumy ipsum sit sea clita ipsum clita, ipsum dolores amet voluptua duo dolores et sit ipsum rebum, sadipscing et erat eirmod diam kasd labore clita est. Diam sanctus gubergren sit rebum clita amet.</p> -->
+
+                    <div class="d-flex mb-3">
+                        <div class="btn-icon bg-primary mr-4">
+                            <i class="fa fa-2x fa-graduation-cap text-white"></i>
+                        </div>
+                        <div class="mt-n1">
+                            <h4>Expert-Led Instruction</h4>
+                            <p> Our team of experts combines academic excellence with real-world experience, mentoring
+                                and inspiring learners on their journey.</p>
+                            <!-- <p class="m-0">>Our team is comprised of accomplished academicians and experienced professionals who
+                                    bring real-world insights and expertise to every program. They are dedicated mentors who
+                                    go beyond teaching to inspire and guide each learner’s journey.
+                                </p> -->
+                        </div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <div class="btn-icon bg-secondary mr-4">
+                            <i class="fa fa-2x fa-certificate text-white"></i>
+                        </div>
+                        <div class="mt-n1">
+                            <h4>High-Quality, Competitive Education</h4>
+                            <p>We deliver world-class education through meticulously designed programs, equipping you
+                                with the skills to excel in your field.
+                            </p>
+                            <!-- <p>We are committed to delivering top-tier education that’s competitive on a global scale.
+                                Our programs are meticulously designed to uphold the highest standards, ensuring you
+                                receive the knowledge and skills needed to excel in your field.
+                            </p> -->
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="btn-icon bg-warning mr-4">
+                            <i class="fa fa-2x fa-book-reader text-white"></i>
+                        </div>
+                        <div class="mt-n1">
+                            <h4>Personalized Learning Experience</h4>
+                            <p class="m-0">We tailor our courses to meet your individual needs, ensuring that you learn
+                                at your own pace and focus on your specific goals.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5" style="min-height: 500px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100" src="img/feature.jpeg" style="object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Feature end -->
+
+    <!-- Courses Start -->
+    <div id="course" class="container py-5">
+        <div class="row mx-0 justify-content-center pt-5">
+            <div class="col-lg-12">
+                <div class="section-title text-center position-relative mb-4">
+                    <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Our Courses</h6>
+                    <h1 class="display-4">Checkout Our Courses</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row pb-5">
+            <!-- Course Card 1 -->
+            <div class="col-lg-6 mb-4">
+                <div class="card border-0 course-card hover-scale">
+                    <div class="position-relative">
+                        <img class="card-img-top" src="img/course-1.jpg" alt="Course Image">
+                        <div class="overlay-content">
+                            <div class="text-center">
+                                <h3 class="text-white mb-4">Integrated Higher Secondary</h3>
+                                <p class="text-white mb-4">COMMERCE | HUMANITIES</p>
+                                <a href="course-1.html" class="detail-btn">Course Detail</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Card 2 -->
+
+            <div class="col-lg-6 mb-4">
+                <div class="card border-0 course-card hover-scale">
+                    <div class="position-relative">
+                        <img class="card-img-top" src="img/course-2.jpg" alt="Course Image">
+                        <div class="overlay-content">
+                            <div class="text-center">
+                                <h3 class="text-white mb-4">External Coachings</h3>
+                                <p class="text-white mb-4">CUET | NCET | CLAT | IPMAT</p>
+                                <a href="course-2.html" class="detail-btn">Course Detail</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Courses End -->
+
+    <!-- Team Start -->
+    <!-- <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative mb-5">
+                <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Instructors</h6>
+                <h1 class="display-4">Meet Our Instructors</h1>
+            </div>
+            <div class="owl-carousel team-carousel position-relative" style="padding: 0 30px;">
+                <div class="team-item">
+                    <img class="img-fluid w-100" src="img/team-1.jpg" alt="">
+                    <div class="bg-light text-center p-4">
+                        <h5 class="mb-3">Instructor Name</h5>
+                        <p class="mb-2">Web Design & Development</p>
+                        <div class="d-flex justify-content-center">
+                                <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
+                                <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
+                                <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+                            </div>
+                    </div>
+                </div>
+                <div class="team-item">
+                    <img class="img-fluid w-100" src="img/team-2.jpg" alt="">
+                    <div class="bg-light text-center p-4">
+                        <h5 class="mb-3">Instructor Name</h5>
+                        <p class="mb-2">Web Design & Development</p>
+                        <div class="d-flex justify-content-center">
+                                <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
+                                <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
+                                <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+                            </div>
+                    </div>
+                </div>
+                <div class="team-item">
+                    <img class="img-fluid w-100" src="img/team-3.jpg" alt="">
+                    <div class="bg-light text-center p-4">
+                        <h5 class="mb-3">Instructor Name</h5>
+                        <p class="mb-2">Web Design & Development</p>
+                        <div class="d-flex justify-content-center">
+                                <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
+                                <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
+                                <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+                            </div>
+                    </div>
+                </div>
+                <div class="team-item">
+                    <img class="img-fluid w-100" src="img/team-4.jpg" alt="">
+                    <div class="bg-light text-center p-4">
+                        <h5 class="mb-3">Instructor Name</h5>
+                        <p class="mb-2">Web Design & Development</p>
+                        <div class="d-flex justify-content-center">
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  -->
+    <!-- Team End -->
+
+
+    <!-- Testimonial Start -->
+    <div class="container-fluid bg-image py-5">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative mb-5">
+                <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Testimonials</h6>
+                <h1 class="display-4"> Our Aspiring Achievers</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel position-relative" style="padding: 0 30px;">
+                <div class="testimonial-item">
+                    <div class="bg-white text-center p-4">
+                        <img class="img-fluid mx-auto rounded-circle mb-4" src="img/testimonial-1.jpg"
+                            style="width: 100px; height: 100px; object-fit: cover;">
+                        <h5 class="mb-1">ROHITH TA</h5>
+                        <!-- <p class="text-muted mb-3">Commerce Student</p> -->
+                        <p class="m-0">From Edappal, a diligent student of Edappal Higher Secondary School. With a
+                            passion for uncovering the past, Rohith aspires to pursue a degree in History or Archeology
+                            at a prestigious institution such as Delhi University or Madras University. Driven by his
+                            curiosity and academic zeal, Rohith is poised to explore the rich cultural heritage of our
+                            world.</p>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="bg-white text-center p-4">
+                        <img class="img-fluid mx-auto rounded-circle mb-4" src="img/testimonial-2.jpg"
+                            style="width: 100px; height: 100px; object-fit: cover;">
+                        <h5 class="mb-1">ISHWAR ES </h5>
+                        <!-- <p class="text-muted mb-3">CUET Student</p> -->
+                        <p class="m-0">From Trithala, Palakkad, a bright student of GHSS Mezhathur. With a keen interest
+                            in governance and politics, Ishwar aims to pursue Political Science at the esteemed Delhi
+                            University. Supported by his parents, who work in the private sector, Ishwar is determined
+                            to excel in his academic pursuits and make a meaningful impact in his chosen field.</p>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="bg-white text-center p-4">
+                        <img class="img-fluid mx-auto rounded-circle mb-4" src="img/testimonial-3.jpg"
+                            style="width: 100px; height: 100px; object-fit: cover;">
+                        <h5 class="mb-1">SHAHANA SHERIN KM </h5>
+                        <!-- <p class="text-muted mb-3">Humanities Student</p> -->
+                        <p class="m-0">Shahana, a diligent student from MES HSS Ponnani, is driven by her passion for
+                            History and aspires to pursue her studies at the prestigious Delhi University. Inspired by
+                            her hardworking parents, she embodies perseverance and determination. With her sights set on
+                            academic excellence, Shahana is poised to make a lasting impact in her chosen field.</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-item">
+                    <div class="bg-white text-center p-4">
+                        <img class="img-fluid mx-auto rounded-circle mb-4" src="img/testimonial-4.jpg"
+                            style="width: 100px; height: 100px; object-fit: cover;">
+                        <h5 class="mb-1">FATHIMA NAFLA </h5>
+                        <!-- <p class="text-muted mb-3">Humanities Student</p> -->
+                        <p class="m-0">A promising +2 Humanities student from Garden Valley EMHSS, Kuttippala. Residing
+                            in Pookiparamb, Fathima is driven to pursue Sociology at the esteemed University of Delhi.
+                            With the guidance of XCELIA Centre for Excellence, Tirur, she is well on her way to
+                            achieving her academic aspirations. Inspired by her supportive family, including her father,
+                            a skilled cooking chef, Fathima embodies the dedication and passion that define our
+                            students.</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-item">
+                    <div class="bg-white text-center p-4">
+                        <img class="img-fluid mx-auto rounded-circle mb-4" src="img/testimonial-5.jpg"
+                            style="width: 100px; height: 100px; object-fit: cover;">
+                        <h5 class="mb-1">MB NETHRANARAYANAN </h5>
+                        <!-- <p class="text-muted mb-3">Humanities Student</p> -->
+                        <p class="m-0">A bright student from Ghss Mezhathur. Hailing from a family that values hard work
+                            and education, Nethranarayanan's father is a dedicated farmer, while his mother is a
+                            passionate teacher. Inspired by his roots, Nethranarayanan aims to pursue Economics at the
+                            esteemed University of Hyderabad, seeking to understand the intricacies of economic systems
+                            and contribute to the betterment of society.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+
+
+    <!-- Contact Start -->
+    <div id="contact" class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <div class="bg-light d-flex flex-column justify-content-center px-5" style="height: 450px;">
+                        <div class="d-flex align-items-center mb-5">
+                            <div class="btn-icon bg-primary mr-4">
+                                <i class="fa fa-2x fa-map-marker-alt text-white"></i>
+                            </div>
+                            <div class="mt-n1">
+                                <h4>Our Location</h4>
+                                <p class="m-0">Edappal, Malappuram</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-5">
+                            <div class="btn-icon bg-secondary mr-4">
+                                <i class="fa fa-2x fa-phone-alt text-white"></i>
+                            </div>
+                            <div class="mt-n1">
+                                <h4>Call Us</h4>
+                                <p class="m-0">+91 9995 400 699</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div class="btn-icon bg-warning mr-4">
+                                <i class="fa fa-2x fa-envelope text-white"></i>
+                            </div>
+                            <div class="mt-n1">
+                                <h4>Email Us</h4>
+                                <p class="m-0">xceliaedu@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="section-title position-relative mb-4">
+                        <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Need Help?
+                        </h6>
+                        <h1 class="display-4">Send Us A Message</h1>
+                    </div>
+                    <div class="contact-form">
+                        <form id="contact-form">
+                            <div class="row">
+                                <div class="col-6 form-group">
+                                    <input type="text" id="name"
+                                        class="form-control border-top-0 border-right-0 border-left-0 p-0"
+                                        placeholder="Your Name">
+                                    <small id="name-error" style="color: #ff021b;"></small>
+                                </div>
+                                <div class="col-6 form-group">
+                                    <input type="email" id="email"
+                                        class="form-control border-top-0 border-right-0 border-left-0 p-0"
+                                        placeholder="Your Email">
+                                    <small id="email-error" style="color: #ff021b ;"></small>
+                                </div>
+                            </div>
+                            <div class="form-group">
+
+                                <input type="text" id="phone"
+                                    class="form-control border-top-0 border-right-0 border-left-0 p-0"
+                                    placeholder="Phone">
+                                <small id="phone-error" style="color: #ff021b;"></small>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message"
+                                    class="form-control border-top-0 border-right-0 border-left-0 p-0" rows="5"
+                                    placeholder="Message"></textarea>
+                                <small id="message-error" style="color: #ff021b;"></small>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary py-3 px-5" type="submit">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid position-relative overlay-top bg-dark text-white-50 py-5" style="margin-top: 90px;">
+        <div class="container mt-5 pt-3">
+            <div class="row">
+                <div class="col-md-6 mb-5">
+                    <a href="index.html" class="navbar-brand">
+                        <img src="./img/xcelia-footer-logo.png" alt="" width="200" height="93">
+                    </a>
+                    <!-- <p class="m-0">With a team of experts from diverse backgrounds, we offer a comprehensive range
+                            of educational programs that blend academic rigor with practical relevance. Each of our
+                            programs is thoughtfully designed to not only impart knowledge but also to foster critical
+                            thinking, and innovation. 
+                        </p> -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-5">
+                    <h3 class="text-white mb-4">Get In Touch</h3>
+                    <p><i class="fa fa-map-marker-alt mr-2"></i><a href="https://maps.app.goo.gl/MczBYJyXd6WQHGk8A"
+                            target="_blank">
+                            Edappal, Malappuram</a></p>
+                    <p><i class="fa fa-phone-alt mr-2"></i>+91 9995 400 699</p>
+                    <p><i class="fa fa-envelope mr-2"></i>xceliaedu@gmail.com</p>
+                    <div class="d-flex justify-content-start mt-4">
+                        <!-- <a class="text-white mr-4" href="#"><i class="fab fa-2x fa-twitter"></i></a> -->
+                        <a class="text-white mr-4" href="https://www.facebook.com/profile.php?id=100095133859562"
+                            target="_blank"><i class="fab fa-2x fa-facebook-f"></i></a>
+                        <!-- <a class="text-white mr-4" href="#"><i class="fab fa-2x fa-linkedin-in"></i></a> -->
+                        <a class="text-white" href="https://www.instagram.com/xceliaedu" target="_blank"><i
+                                class="fab fa-2x fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <h3 class="text-white mb-4">Our Courses</h3>
+                    <div class="d-flex flex-column justify-content-start">
+                        <a class="text-white-50 mb-2" href="#course"><i class="fa fa-angle-right mr-2"></i>Integrated
+                            Higher Secondary</a>
+                        <a class="text-white-50 mb-2" href="#course"><i class="fa fa-angle-right mr-2"></i>External
+                            Coachings</a>
+
+                        <a class="text-white-50 mb-2" href="#course"><i class="fa fa-angle-right mr-2"></i>+1 & +2
+                            Tuition</a>
+                        <a class="text-white-50 mb-2" href="#course"><i class="fa fa-angle-right mr-2"></i>CUET</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <h3 class="text-white mb-4">Quick Links</h3>
+                    <div class="d-flex flex-column justify-content-start">
+                        <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                        <a class="text-white-50 mb-2" href="#about"><i class="fa fa-angle-right mr-2"></i>About</a>
+                        <a class="text-white-50 mb-2" href="#course"><i class="fa fa-angle-right mr-2"></i>Courses</a>
+                        <!-- <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Help &
+                            Support</a> -->
+                        <a class="text-white-50" href="#contact"><i class="fa fa-angle-right mr-2"></i>Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-dark text-white-50 border-top py-4"
+        style="border-color: rgba(256, 256, 256, .1) !important;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
+                    <p class="m-0">Copyright &copy; <a class="text-white" href="#">Xcelia</a>, All Rights Reserved.
+                    </p>
+                </div>
+                <div class="col-md-6 text-center text-md-right">
+                    <p class="m-0">Powered by
+                        <a class="text-white" href="https://www.ecomex.tech/" target="_blank">E-comex</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary rounded-0 btn-lg-square back-to-top"><i
+            class="fa fa-angle-double-up"></i></a>
+
+    <!-- Toast start  -->
+    <div id="toast" style="visibility: hidden;">
+        <div id="toast-message"></div>
+    </div>
+    <!-- Toast end  -->
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <!-- form validation script  -->
+    <script>
+        function validateForm() {
+            var name = document.getElementById('name').value;
+            var phone = document.getElementById('phone').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+
+            document.getElementById('name-error').textContent = "";
+            document.getElementById('phone-error').textContent = "";
+            document.getElementById('email-error').textContent = "";
+            document.getElementById('message-error').textContent = "";
+
+            var isValid = true;
+
+            if (name === "") {
+                document.getElementById('name-error').textContent = "Name is required.";
+                isValid = false;
+            }
+
+            if (phone === "") {
+                document.getElementById('phone-error').textContent = "Phone number is required.";
+                isValid = false;
+            } else if (!/^\d+$/.test(phone)) {
+                document.getElementById('phone-error').textContent = "Phone number must contain digits only.";
+                isValid = false;
+            } else if (!/^\d{10}$/.test(phone)) {
+                document.getElementById('phone-error').textContent = "Phone number must be exactly 10 digits.";
+                isValid = false;
+            }
+
+            if (email === "") {
+                document.getElementById('email-error').textContent = "Email is required.";
+                isValid = false;
+            } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                document.getElementById('email-error').textContent = "Please enter a valid email address.";
+                isValid = false;
+            }
+
+            if (message === "") {
+                document.getElementById('message-error').textContent = "Message is required.";
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+    </script>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- send mail script  -->
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "VqFgUd8MQvetzVvoc",
+            });
+        })();
+
+        function showToast(message, isSuccess = true) {
+            const toast = document.getElementById("toast");
+            const toastMessage = document.getElementById("toast-message");
+
+            // Set message and style based on success/error
+            toastMessage.textContent = message;
+            toast.style.backgroundColor = isSuccess ? "#28a745" : "#dc3545";
+
+            // Show the toast
+            toast.style.visibility = "visible";
+            toast.classList.add("show");
+
+            // Hide after 3 seconds
+            setTimeout(function () {
+                toast.classList.remove("show");
+                setTimeout(function () {
+                    toast.style.visibility = "hidden";
+                }, 500);
+            }, 3000);
+        }
+
+        document.getElementById("contact-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            if (validateForm()) {
+                const templateParams = {
+                    from_name: document.getElementById("name").value,
+                    to_name: "Xcelia",
+                    email: document.getElementById("email").value,
+                    phone: document.getElementById("phone").value,
+                    message: document.getElementById("message").value,
+                    reply_to: document.getElementById("email").value,
+                };
+
+                emailjs
+                    .send("service_xtu6n8n", "template_obn367j", templateParams)
+                    .then(
+                        function (response) {
+                            showToast("Email sent successfully!");
+                            document.getElementById("contact-form").reset();
+                        },
+                        function (error) {
+                            showToast("Failed to send email. Please try again.", false);
+                        }
+                    );
+            }
+        });
+    </script>
+
+    <!-- header typing-animation -->
+    <script>
+        function typeText() {
+            const text = "Be competent in the competitive world!";
+            const element = document.getElementById('typing-text');
+            let index = 0;
+
+            element.classList.add('typing-animation');
+
+            function type() {
+                if (index < text.length) {
+                    element.textContent += text.charAt(index);
+                    index++;
+                    setTimeout(type, 100); // Adjust typing speed here (lower = faster)
+                } else {
+                    element.classList.remove('typing-animation');
+                }
+            }
+
+            type();
+        }
+
+        // Start typing animation when page loads
+        window.addEventListener('load', typeText);
+    </script>
+</body>
+
+</html>

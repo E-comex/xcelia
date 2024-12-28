@@ -1,0 +1,240 @@
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+    .display-1 {
+        font-size: 4.5rem;
+    }
+    
+    .display-4 {
+        font-size: 2.5rem;
+    }
+
+    .section-title h1 {
+        font-size: 2.2rem;
+    }
+    
+    .card .overlay-content h3 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+    .display-1 {
+        font-size: 4rem;
+    }
+    
+    .display-4 {
+        font-size: 2.2rem;
+    }
+
+    .section-title h1 {
+        font-size: 2rem;
+    }
+
+    /* Course cards */
+    .card-img-top {
+        height: 350px;
+    }
+
+    .card .overlay-content h3 {
+        font-size: 1.6rem;
+    }
+
+    .card .overlay-content p {
+        font-size: 1rem;
+    }
+
+    /* Features section */
+    .btn-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .feature-text h4 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+    .display-1 {
+        font-size: 3rem;
+    }
+    
+    .display-4 {
+        font-size: 1.8rem;
+    }
+
+    .section-title h1 {
+        font-size: 1.8rem;
+    }
+
+    /* Course cards */
+    .card-img-top {
+        height: 300px;
+    }
+
+    .card .overlay-content {
+        padding: 1.5rem;
+    }
+
+    .card .overlay-content h3 {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .card .overlay-content p {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    .detail-btn {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+
+    /* About section counters */
+    .bg-success h1,
+    .bg-secondary h1,
+    .bg-warning h1 {
+        font-size: 2rem;
+    }
+
+    .bg-success h6,
+    .bg-secondary h6,
+    .bg-warning h6 {
+        font-size: 0.8rem;
+    }
+
+    /* Features section */
+    .btn-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .btn-icon i {
+        font-size: 1.5rem !important;
+    }
+
+    .feature-text h4 {
+        font-size: 1.1rem;
+    }
+
+    /* Testimonials */
+    .testimonial-item .bg-white {
+        padding: 1.5rem !important;
+    }
+
+    .testimonial-item h5 {
+        font-size: 1.1rem;
+    }
+
+    .testimonial-item p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .display-1 {
+        font-size: 2.5rem;
+    }
+    
+    .display-4 {
+        font-size: 1.5rem;
+    }
+
+    .section-title h1 {
+        font-size: 1.5rem;
+    }
+
+    .section-title h6 {
+        font-size: 0.9rem;
+    }
+
+    /* Course cards */
+    .card-img-top {
+        height: 250px;
+    }
+
+    .card .overlay-content {
+        padding: 1rem;
+    }
+
+    .card .overlay-content h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .card .overlay-content p {
+        font-size: 0.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .detail-btn {
+        padding: 6px 15px;
+        font-size: 0.8rem;
+    }
+
+    /* About section */
+    .about-text p {
+        font-size: 0.9rem;
+    }
+
+    /* Features section */
+    .btn-icon {
+        width: 40px;
+        height: 40px;
+        margin-right: 0.8rem !important;
+    }
+
+    .btn-icon i {
+        font-size: 1.2rem !important;
+    }
+
+    .feature-text h4 {
+        font-size: 1rem;
+    }
+
+    .feature-text p {
+        font-size: 0.9rem;
+    }
+
+    /* Contact section */
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.9rem;
+    }
+
+    /* Footer */
+    .footer-text {
+        font-size: 0.9rem;
+    }
+
+    .text-white-50 {
+        font-size: 0.85rem;
+    }
+}
+
+/* Fix for navbar on mobile devices */
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        padding: 1rem 0;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 0.5rem 0;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0.5rem 1rem !important;
+    }
+}
+
+/* Adjust container padding for better mobile experience */
+@media (max-width: 767.98px) {
+    .container {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}

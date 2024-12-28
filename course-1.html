@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Integrated Higher Secondary - Xcelia</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        .course-header {
+            background: linear-gradient(rgba(0, 0 ,0 ,0.7), rgba(0, 0,0, 0.7)), url('img/header.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            margin-bottom: 50px;
+        }
+
+        .section-card {
+            border-radius: 15px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+            background: white;
+            transition: transform 0.3s ease;
+        }
+
+        .section-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .program-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .program-card:hover {
+            transform: translateX(10px);
+        }
+
+        .feature-item {
+            padding: 20px;
+            border-left: 4px solid var(--primary);
+            margin-bottom: 20px;
+            background: #f8f9fa;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: start;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .benefit-item i {
+            color: var(--primary);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        .benefit-content {
+            flex: 1;
+        }
+
+        /* back to home style */
+        .back-home {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            padding: 10px 20px;
+            background: var(--primary);
+            color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-home:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            color: white;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .back-home {
+                top: 10px;
+                left: 10px;
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Start -->
+    <div class="course-header">
+        <div class="container text-center">
+            <h1 class="text-white display-3">Integrated Higher Secondary</h1>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Update Course Details section -->
+    <div class="container py-5">
+        <div class="section-card">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="mb-4">Course Overview</h2>
+                    <p class="text-justify">Integrated Higher Secondary education refers to a comprehensive educational
+                        program that combines academic subjects with skill-based training, vocational courses, or
+                        entrance exam preparation. This approach aims to provide students with a holistic education that
+                        prepares them for higher studies, careers, and life.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <h2 class="mb-4">Available Streams</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="program-card">
+                        <h3 class="text-primary">COMMERCE</h3>
+                        <p>Students can complete their Higher Secondary with:</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fa fa-check-circle text-primary mr-2"></i>CA Foundation</li>
+                            <li><i class="fa fa-check-circle text-primary mr-2"></i>CMA Foundation</li>
+                            <li><i class="fa fa-check-circle text-primary mr-2"></i>ACCA Knowledge level</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="program-card">
+                        <h3 class="text-primary">HUMANITIES</h3>
+                        <p>Students have ability to face competitive exams:</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fa fa-check-circle text-primary mr-2"></i>CUET</li>
+                            <li><i class="fa fa-check-circle text-primary mr-2"></i>NCET</li>
+                            <li><i class="fa fa-check-circle text-primary mr-2"></i>CLAT</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="section-card">
+                    <h2 class="mb-4">Key Features</h2>
+                    <div class="feature-item">
+                        <h5>Interdisciplinary Learning</h5>
+                        <p>Comprehensive approach combining multiple subjects and learning methods</p>
+                    </div>
+                    <div class="feature-item">
+                        <h5>Practical Skills Focus</h5>
+                        <p>Emphasis on application-based learning and real-world skills</p>
+                    </div>
+                    <div class="feature-item">
+                        <h5>Career Preparation</h5>
+                        <p>Prepares students for various career paths and higher education</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="section-card">
+                    <h2 class="mb-4">Benefits</h2>
+                    <div class="benefit-item">
+                        <i class="fa fa-star fa-2x"></i>
+                        <div class="benefit-content">
+                            <h5>Well-rounded Education</h5>
+                            <p>Balanced approach to academic and practical skills</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fa fa-trophy fa-2x"></i>
+                        <div class="benefit-content">
+                            <h5>Competitive Exam Preparation</h5>
+                            <p>Structured preparation for various entrance examinations</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fa fa-road fa-2x"></i>
+                        <div class="benefit-content">
+                            <h5>Career Flexibility</h5>
+                            <p>Multiple career options and educational pathways</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary rounded-0 btn-lg-square back-to-top"><i
+            class="fa fa-angle-double-up"></i></a>
+
+    <!-- Keep footer and scripts the same -->
+
+    <!-- Back to Home -->
+    <a href="index.html#course" class="back-home">
+        <i class="fa fa-chevron-left"></i>
+        Back to Home
+    </a>
+
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
